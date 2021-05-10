@@ -1,22 +1,24 @@
 body {
-  background-color: lightcyan;
+  background: #ece6dc;
 }
 
 header {
   border-style: solid;
   margin-left: 2em;
   margin-right: 2em;
+  margin-top: 5em;
+  margin-bottom: 2em;
 }
 
 h1 {
   text-align: center;
-  font-size: 400%;
+  font-size: 200%;
   font-family: "Times New Roman", Times, serif;
 }
 
 p {
   text-align: justify;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Times New Roman", Times, serif;
   margin-left: 2em;
   margin-right: 2em;
 }
