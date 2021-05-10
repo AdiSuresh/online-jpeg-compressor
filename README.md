@@ -9,6 +9,10 @@ on a client–server model architecture using separate control and data connecti
 
 ![](images/ftp-diagram.png)
 
+SMTP is a set of communication guidelines that allow software to transmit an electronic mail over the internet is called Simple Mail Transfer Protocol. It is a program used for sending messages to other computer users based on email addresses.
+
+![](images/how-smtp-works.png)
+
 ## Modules for the project
 
 1. **File Upload**: The user can upload a .jpeg file and it will be sent to the server for compression.
