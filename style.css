@@ -1,19 +1,22 @@
 body {
-  background-image: linear-gradient(
-    to right,
-    rgba(54, 238, 198, 0),
-    rgb(54, 238, 198, 1)
-  );
+  background-color: lightcyan;
+}
+
+header {
+  border-style: solid;
+  margin-left: 2em;
+  margin-right: 2em;
 }
 
 h1 {
   text-align: center;
   font-size: 400%;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Times New Roman", Times, serif;
 }
 
 p {
-  text-align: center;
-  margin: 2em;
+  text-align: justify;
   font-family: "Courier New", Courier, monospace;
+  margin-left: 2em;
+  margin-right: 2em;
 }
