@@ -7,8 +7,6 @@ We use FTP (File Transfer Protocol) for upload and download of the file and SMTP
 FTP is a standard communication protocol used for the transfer of computer files from a server to a client on a computer network. FTP is built
 on a client–server model architecture using separate control and data connections between the client and the server.
 
-![What is file transfer Protocol(FTP)?]('/ftp-diagram.webp')
-
 ## Modules for the project
 
 1. **File Upload**: The user can upload a .jpeg file and it will be sent to the server for compression.
