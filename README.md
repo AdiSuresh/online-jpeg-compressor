@@ -9,7 +9,7 @@ on a client–server model architecture using separate control and data connecti
 
 ![FTP Diagram](images/ftp-diagram.png)
 
-**SMTP** is a set of communication guidelines that allow software to transmit an electronic mail over the internet is called Simple Mail Transfer Protocol. It is a program used for sending messages to other computer users based on email addresses.
+**SMTP** is a set of communication guidelines that allow software to transmit an electronic mail over the internet. It is a program used for sending messages to other computer users based on email addresses.
 
 ![How SMTP Works?](images/how-smtp-works.png)
 
