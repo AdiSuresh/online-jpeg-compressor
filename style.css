@@ -1,5 +1,9 @@
 body {
-  background-image: linear-gradient(grey, white);
+  background-image: linear-gradient(
+    to right,
+    rgba(54, 238, 198, 0),
+    rgb(54, 238, 198, 1)
+  );
 }
 
 h1 {
