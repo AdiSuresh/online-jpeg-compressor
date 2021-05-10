@@ -21,6 +21,8 @@ on a client–server model architecture using separate control and data connecti
 
 ## Software
 
-**Language Stack**: Python, HTML, CSS  
-**Frameworks**: Flask(backend), Django  
+**Language Stack**: Python, HTML, CSS
+
+**Frameworks**: Flask(backend), Django
+
 **Development Tools**: Atom, VS Code, Cloud Hosting with Heroku
