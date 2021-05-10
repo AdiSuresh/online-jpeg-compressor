@@ -1,9 +1,8 @@
 body {
-  background: #ece6dc;
+  background: linear-gradient(to right, #ece6dc, whitesmoke, #ece6dc);
 }
 
 header {
-  border-style: solid;
   margin-left: 2em;
   margin-right: 2em;
   margin-top: 5em;
@@ -12,13 +11,15 @@ header {
 
 h1 {
   text-align: center;
-  font-size: 200%;
+  font-size: 250%;
   font-family: "Times New Roman", Times, serif;
 }
 
 p {
   text-align: justify;
   font-family: "Times New Roman", Times, serif;
+  font-size: 120%;
+  line-height: 1.5;
   margin-left: 2em;
   margin-right: 2em;
 }
