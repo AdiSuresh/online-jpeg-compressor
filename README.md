@@ -4,12 +4,11 @@ This project is aimed at users who want to compress their JPEG files (file size 
 
 We use FTP (File Transfer Protocol) for upload and download of the file and SMTP (Simple Mail Transfer Protocol) for sending the file via email.
 
-**FTP** is a standard communication protocol used for the transfer of computer files from a server to a client on a computer network. FTP is built
-on a client–server model architecture using separate control and data connections between the client and the server.
+**FTP** is a standard communication protocol used for the transfer of computer files from a server to a client on a computer network. FTP is built on a client–server model architecture using separate control and data connections between the client and the server.
 
 ![FTP Diagram](images/ftp-diagram.png)
 
-**SMTP** is a set of communication guidelines that allow software to transmit an electronic mail over the internet. It is a program used for sending messages to other computer users based on email addresses.
+**SMTP** is a set of communication guidelines that allow software to transmit an electronic mail over the internet. This protocol allows applications to send and receive emails.
 
 ![How SMTP Works?](images/how-smtp-works.png)
 
