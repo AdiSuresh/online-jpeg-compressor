@@ -1,19 +1,25 @@
 body {
-  background-image: linear-gradient(
-    to right,
-    rgba(54, 238, 198, 0),
-    rgb(54, 238, 198, 1)
-  );
+  background: linear-gradient(to right, #ece6dc, whitesmoke, #ece6dc);
+}
+
+header {
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 5em;
+  margin-bottom: 2em;
 }
 
 h1 {
   text-align: center;
-  font-size: 400%;
-  font-family: "Courier New", Courier, monospace;
+  font-size: 250%;
+  font-family: "Times New Roman", Times, serif;
 }
 
 p {
-  text-align: center;
-  margin: 2em;
-  font-family: "Courier New", Courier, monospace;
+  text-align: justify;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 120%;
+  line-height: 1.5;
+  margin-left: 2em;
+  margin-right: 2em;
 }
