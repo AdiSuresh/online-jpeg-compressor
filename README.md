@@ -6,11 +6,11 @@ We use FTP (File Transfer Protocol) for upload and download of the file and SMTP
 
 **FTP** is a standard communication protocol used for the transfer of computer files from a server to a client on a computer network. FTP is built on a client–server model architecture using separate control and data connections between the client and the server.
 
-![FTP Diagram](images/ftp-diagram.png)
+![FTP Diagram](flask_app/images/ftp-diagram.png)
 
 **SMTP** is a set of communication guidelines that allow software to transmit an electronic mail over the internet. This protocol allows applications to send and receive emails.
 
-![How SMTP Works?](images/how-smtp-works.png)
+![How SMTP Works?](flask_app/images/how-smtp-works.png)
 
 ## Modules for the project
 
