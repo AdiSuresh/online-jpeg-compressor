@@ -28,5 +28,5 @@ We use FTP (File Transfer Protocol) for upload and download of the file and SMTP
 
 ## References
 
-1. [Uploading files with Flask - Python on the web - Learning Flask Series Pt. 13]: http://www.reddit.com
-2. [link text itself]: http://www.reddit.com
+1. [Uploading files with Flask - Python on the web - Learning Flask Series Pt. 13](http://www.reddit.com)
+2. [link text itself](http://www.reddit.com)
