@@ -34,7 +34,7 @@ def allowed_image_filesize(filesize):
 
 def allowed_image(filename):
     # We only want files with a . in the filename
-    if not "." in filename:
+    if "." not in filename:
         return False
     # Split the extension from the filename
     ext = filename.rsplit(".", 1)[1]
@@ -64,8 +64,9 @@ def upload_image():
 
                 if allowed_image(image.filename):
                     filename = secure_filename(image.filename)
+                    attr = "IMAGE_UPLOADS"
 
-                    image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
+                    image.save(os.path.join(app.config[attr], filename))
 
                     print("Image saved")
 
