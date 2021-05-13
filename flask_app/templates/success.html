@@ -1,7 +1,8 @@
 <!doctype html>
 <title>Hello from Flask</title>
 {% if filename %}
-  <h1>some text<img src="{{ url_for('display_image', filename=filename) }}" width="50" height="50"> more text!</h1>
+<h1>some text<img src="{{ url_for('display_image', filename=filename) }}" width="50" height="50"> more text!</h1>
+<button type="button" onclick="window.location.href='{{ url_for('download_image', filename=filename) }}';">Download</button>
 {% else %}
-  <h1>no image for whatever reason</h1>
+<h1>no image for whatever reason</h1>
 {% endif %}

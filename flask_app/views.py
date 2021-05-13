@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, send_file
 from flask_app import app
 import re
 import os
@@ -51,10 +51,16 @@ def success(filename):
     return render_template('success.html', filename=filename)
 
 
-# @app.route('/display/<filename>')
+@app.route('/display/<filename>')
 def display_image(filename):
     print(filename)
     return redirect(url_for('static', filename='uploaded_images/' + filename), code=301)
+
+
+@app.route("/download/<filename>")
+def download_image(filename):
+    print(filename)
+    return send_file('static/uploaded_images/' + filename, as_attachment=True)
 
 
 @app.route("/upload-image", methods=["GET", "POST"])
