@@ -16,7 +16,8 @@ print("image path is " + image_path)
 app.config["IMAGE_UPLOADS"] = image_path
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG"]
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
-app.config["MAX_IMAGE_FILESIZE"] = 0.5 * 1024 * 1024
+# app.config["MAX_IMAGE_FILESIZE"] = 0.5 * 1024 * 1024
+app.config["MAX_IMAGE_FILESIZE"] = 50 * 1024 * 1024
 
 
 @app.route('/')
@@ -37,7 +38,6 @@ def allowed_image(filename):
         return False
     # Split the extension from the filename
     ext = filename.rsplit(".", 1)[1]
-
     # Check if the extension is in ALLOWED_IMAGE_EXTENSIONS
     if ext.upper() in app.config["ALLOWED_IMAGE_EXTENSIONS"]:
         return True
@@ -65,6 +65,9 @@ def download_image(filename):
 
 @app.route("/upload-image", methods=["GET", "POST"])
 def upload_image():
+    for f in os.listdir(image_path):
+        print(f"deleting {f}")
+        os.remove(os.path.join(image_path, f))
     if request.method == "POST":
         if request.files:
             if "filesize" in request.cookies:
@@ -84,6 +87,7 @@ def upload_image():
                     image.save(os.path.join(app.config[attr], filename))
                     print("Image saved")
                     print(f"upload_image: {filename}")
+                    print(f"image var type: {type(image)}")
                     # return redirect(request.url)
                     return render_template('success.html', filename=filename)
 
