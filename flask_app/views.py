@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, url_for
 from flask_app import app
 import re
 import os
@@ -25,7 +25,6 @@ def home():
 
 
 def allowed_image_filesize(filesize):
-
     if int(filesize) <= app.config["MAX_IMAGE_FILESIZE"]:
         return True
     else:
@@ -46,12 +45,23 @@ def allowed_image(filename):
         return False
 
 
+@app.route('/success')
+def success(filename):
+    print(f'success! {filename}')
+    return render_template('success.html', filename=filename)
+
+
+# @app.route('/display/<filename>')
+def display_image(filename):
+    print(filename)
+    return redirect(url_for('static', filename='uploaded_images/' + filename), code=301)
+
+
 @app.route("/upload-image", methods=["GET", "POST"])
 def upload_image():
     if request.method == "POST":
         if request.files:
             if "filesize" in request.cookies:
-
                 if not allowed_image_filesize(request.cookies["filesize"]):
                     print("Filesize exceeded maximum limit")
                     return redirect(request.url)
@@ -65,15 +75,13 @@ def upload_image():
                 if allowed_image(image.filename):
                     filename = secure_filename(image.filename)
                     attr = "IMAGE_UPLOADS"
-
                     image.save(os.path.join(app.config[attr], filename))
-
                     print("Image saved")
-
-                    return redirect(request.url)
+                    print(f"upload_image: {filename}")
+                    # return redirect(request.url)
+                    return render_template('success.html', filename=filename)
 
                 else:
                     print("That file extension is not allowed")
                     return redirect(request.url)
-
     return render_template("upload_image.html")
