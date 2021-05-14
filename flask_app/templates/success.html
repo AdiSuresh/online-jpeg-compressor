@@ -1,10 +1,21 @@
-<!doctype html>
-<title>Compression status</title>
-{% if filename %}
-<h1>Compression successful!</h1>
-<img src="{{ url_for('display_image', filename=filename) }}" width="150">
-<button type="button" onclick="window.location.href='{{ url_for('download_image', filename=filename) }}';">Download</button>
-<button type="button" onclick="window.location.href='{{ url_for('send_mail', filename=filename) }}';">Send to mail</button>
-{% else %}
-<h1>No image uploaded</h1>
-{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compression status</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% if filename %}
+    <h1>Compression successful!</h1>
+    <img src="{{ url_for('display_image', filename=filename) }}" width="150">
+    <button type="button" onclick="window.location.href='{{ url_for('download_image', filename=filename) }}';">Download</button>
+    <button type="button" onclick="window.location.href='{{ url_for('send_mail', filename=filename) }}';">Send to mail</button>
+    {% else %}
+    <h1>No image uploaded</h1>
+    {% endif %}        
+</body>
+</html>

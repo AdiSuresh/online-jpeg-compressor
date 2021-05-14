@@ -1,25 +1,46 @@
 body {
-  background: linear-gradient(to right, #ece6dc, whitesmoke, #ece6dc);
+  background: #333;
 }
 
 header {
-  margin-left: 2em;
-  margin-right: 2em;
-  margin-top: 5em;
-  margin-bottom: 2em;
+  margin: auto;
+  padding: auto;
+  padding-left: 1em;
 }
 
 h1 {
-  text-align: center;
   font-size: 250%;
   font-family: "Times New Roman", Times, serif;
+  color: #fff;
 }
 
 p {
-  text-align: justify;
   font-family: "Times New Roman", Times, serif;
   font-size: 120%;
-  line-height: 1.5;
-  margin-left: 2em;
-  margin-right: 2em;
+  line-height: 1.4;
+  color: #aaa;
+}
+
+.form-group {
+  margin-right: 50%;
+  border: 1px solid #aaa;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  margin: auto;
+  width: 50%;
+  border: 1px solid #bbb;
+  padding: 10px;
+  color: #eee;
+}
+
+label {
+  color: #eee;
+  margin-bottom: 1em;
+}
+
+.custom-file {
+  color: #ddd;
 }
