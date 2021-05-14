@@ -2,7 +2,8 @@ body {
   background: #333;
 }
 
-header {
+header,
+article {
   margin: auto;
   padding: auto;
   padding-left: 1em;
@@ -14,11 +15,29 @@ h1 {
   color: #fff;
 }
 
+h2 {
+  font-size: 200%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #fff;
+}
+
 p {
   font-family: "Times New Roman", Times, serif;
   font-size: 120%;
   line-height: 1.4;
   color: #aaa;
+  width: 90%;
+}
+
+li {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 120%;
+  line-height: 1.4;
+  color: #aaa;
+}
+
+ul li {
+  font-size: 90%;
 }
 
 .form-group {
