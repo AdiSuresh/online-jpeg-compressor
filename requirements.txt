@@ -1,2 +1,5 @@
 python=3.8.8
 flask
+numpy
+opencv
+flask-mail

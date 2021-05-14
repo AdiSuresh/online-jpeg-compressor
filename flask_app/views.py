@@ -3,21 +3,39 @@ from flask_app import app
 import re
 import os
 from werkzeug.utils import secure_filename
+import numpy as np
+import cv2 as cv
+from flask_mail import Message, Mail
 
 file_path_file = open('flask_app/file_path.txt', 'r')
-paths = file_path_file.readlines()
-image_path = ""
-for path in paths:
-    path = re.search("((?<=IMAGE_UPLOADS>).+)", path)
-    if path:
-        image_path = path[0]
-        break
+vars = file_path_file.readlines()
+
+
+def get_req_var(var):
+    result = 0
+    for s in vars:
+        s = re.search("((?<=" + var + ">).+)", s)
+        if s:
+            result = s[0]
+            break
+    return result
+
+
+image_path = get_req_var("IMAGE_UPLOADS")
 print("image path is " + image_path)
 app.config["IMAGE_UPLOADS"] = image_path
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG"]
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
-# app.config["MAX_IMAGE_FILESIZE"] = 0.5 * 1024 * 1024
 app.config["MAX_IMAGE_FILESIZE"] = 50 * 1024 * 1024
+
+# for mail
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = get_req_var("MAIL_USERNAME")
+app.config['MAIL_PASSWORD'] = get_req_var("MAIL_PASSWORD")
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+# for mail
 
 
 @app.route('/')
@@ -54,13 +72,35 @@ def success(filename):
 @app.route('/display/<filename>')
 def display_image(filename):
     print(filename)
-    return redirect(url_for('static', filename='uploaded_images/' + filename), code=301)
+    filename = 'uploaded_images/' + filename
+    return redirect(url_for('static', filename=filename), code=301)
 
 
 @app.route("/download/<filename>")
 def download_image(filename):
     print(filename)
-    return send_file('static/uploaded_images/' + filename, as_attachment=True)
+    filename = 'static/uploaded_images/' + filename
+    return send_file(filename, as_attachment=True)
+
+
+@app.route("/send-mail/<filename>")
+def send_mail(filename):
+    print(filename)
+    filename = 'static/uploaded_images/' + filename
+    mail = Mail(app)
+    mail.init_app(app)
+    msg = Message(
+        "Sent from flask_app",
+        sender="adithyasuresh201@gmail.com",
+        recipients=["adithyasuresh201@gmail.com"],
+        )
+    with app.open_resource(filename) as fp:
+        msg.attach("image.png", "image/jpg", fp.read())
+    print("sending mail...")
+    mail.send(msg)
+    print("mail has been sent")
+    return render_template("mail_sent.html")
+    # return send_file(filename, as_attachment=True)
 
 
 @app.route("/upload-image", methods=["GET", "POST"])
@@ -83,12 +123,15 @@ def upload_image():
 
                 if allowed_image(image.filename):
                     filename = secure_filename(image.filename)
-                    attr = "IMAGE_UPLOADS"
-                    image.save(os.path.join(app.config[attr], filename))
+                    img = np.fromfile(image, np.uint8)
+                    img = cv.imdecode(img, cv.IMREAD_COLOR)
+                    quality = 80
+                    quality_param = [int(cv.IMWRITE_JPEG_QUALITY), quality]
+                    img_path = app.config["IMAGE_UPLOADS"] + "/" + filename
+                    cv.imwrite(img_path, img, quality_param)
                     print("Image saved")
                     print(f"upload_image: {filename}")
                     print(f"image var type: {type(image)}")
-                    # return redirect(request.url)
                     return render_template('success.html', filename=filename)
 
                 else:
