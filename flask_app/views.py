@@ -86,9 +86,10 @@ def send_mail(filename):
     mail.init_app(app)
     msg = Message(
         "Sent from flask_app",
-        sender="adithyasuresh201@gmail.com",
-        recipients=["adithyasuresh201@gmail.com"],
-        )
+        sender=app.config["MAIL_USERNAME"],
+        recipients=["adithyasuresh201@gmail.com",
+                    "adithyansraj20@gmail.com", app.config["MAIL_USERNAME"]],
+    )
     with app.open_resource(filename) as fp:
         msg.attach("image.jpg", "image/jpg", fp.read())
     mail.send(msg)
