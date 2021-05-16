@@ -24,3 +24,56 @@ h1 {
 .greentext {
   color: #24bc34;
 }
+
+.grid-item1 {
+  background: #294887;
+  padding: 1em;
+}
+
+.grid-item2 {
+  background: #294887;
+  align-self: center;
+  padding: 1em;
+}
+
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: 15% 30% 10% 30% 15%;
+  margin-bottom: 3em;
+  color: #cacacc;
+}
+
+a {
+  text-decoration: none;
+  color: #cacacc;
+  text-align: center;
+}
+.compress_file {
+  background: #d41a1b;
+  width: 6em;
+  padding: 1em;
+  border-radius: 10px;
+  height: fit-content;
+  display: grid;
+  margin: auto;
+}
+
+.user-guide {
+  background: black;
+  color: #cacacc;
+  width: 50%;
+  margin: auto;
+  margin-top: 3em;
+  text-align: center;
+  padding: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+}
+
+.instructions {
+  background: #294887;
+  color: #cacacc;
+  width: 50%;
+  margin: auto;
+  padding: 0.5em;
+}
