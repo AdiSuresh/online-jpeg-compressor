@@ -88,3 +88,30 @@ a {
   border-radius: 10px;
   font-size: 150%;
 }
+
+.form-group {
+  width: 40%;
+  margin: auto;
+  color: #cacacc;
+  background: #294887;
+  padding: 4em;
+  border-radius: 15px;
+  font-size: 150%;
+}
+
+.spacer {
+  padding: 0.3em;
+}
+
+.btn-primary {
+  background: #d41a1b;
+  width: 6em;
+  padding: 1em;
+  border: none;
+  border-radius: 10px;
+  height: fit-content;
+  display: grid;
+  margin: auto;
+  color: #cacacc;
+  margin-top: 2em;
+}

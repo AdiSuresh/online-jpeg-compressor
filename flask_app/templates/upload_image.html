@@ -20,14 +20,17 @@
     
             <div class="form-group">
               <label>Select image</label>
+              <div class="spacer"></div>
               <div class="custom-file">
                 <script>
                   function filesize(elem){
                     document.cookie = `filesize=${elem.files[0].size}`
                   }
                 </script>
+                
                 <input type="file" class="custom-file-input" name="image" id="image" oninput="filesize(this);">
               </div>
+              <div class="spacer"></div>
               <button type="submit" class="btn btn-primary">Upload</button>
             </div>
           </form>
