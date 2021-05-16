@@ -1,3 +1,3 @@
 IMAGE_UPLOADS>flask_app/static/uploaded_images
-MAIL_USERNAME>yourId@gmail.com
-MAIL_PASSWORD>password
+MAIL_USERNAME>entityanonymous716@gmail.com
+MAIL_PASSWORD>d5$T8^a5sskAPN
