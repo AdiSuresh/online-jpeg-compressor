@@ -77,3 +77,14 @@ a {
   margin: auto;
   padding: 0.5em;
 }
+
+.thank {
+  width: 30%;
+  margin: auto;
+  color: #24bc34;
+  background: #294887;
+  text-align: center;
+  padding: 3em;
+  border-radius: 10px;
+  font-size: 150%;
+}
