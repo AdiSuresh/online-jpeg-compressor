@@ -13,9 +13,12 @@
     <header>
         <h1 class="greentext">Compression Successful</h1>
     </header>
-    <img src="{{ url_for('display_image', filename=filename) }}" width="150">
-    <button type="button" onclick="window.location.href='{{ url_for('download_image', filename=filename) }}';">Download</button>
-    <button type="button" onclick="window.location.href='{{ url_for('send_mail', filename=filename) }}';">Send to mail</button>
+    <div class="success">
+        <img class=image-success src="{{ url_for('display_image', filename=filename) }}" width="150">
+        <button class="suc-but" type="button" onclick="window.location.href='{{ url_for('download_image', filename=filename) }}';">Download</button>
+        <button class="suc-but green-btn" type="button" onclick="window.location.href='{{ url_for('send_mail', filename=filename) }}';">Send to mail</button>    
+    </div>
+    
     {% else %}
     <h1>No image uploaded</h1>
     {% endif %}        

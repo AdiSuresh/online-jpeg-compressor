@@ -115,3 +115,31 @@ a {
   color: #cacacc;
   margin-top: 2em;
 }
+
+.success {
+  background: #294887;
+  padding: 2em;
+  width: 50%;
+  margin: auto;
+  border-radius: 15px;
+  display: grid;
+  grid-gap: 1em;
+  justify-content: center;
+}
+
+.image-success {
+  width: fit-content;
+  height: fit-content;
+}
+
+.suc-but {
+  padding: 0.4em;
+  border: none;
+  border-radius: 5px;
+  color: #cacacc;
+  background: #d41a1b;
+}
+
+.green-btn {
+  background: black;
+}
