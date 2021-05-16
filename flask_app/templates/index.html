@@ -9,47 +9,60 @@
     <body>
         <header>
             <h1>JPEG File Compression</h1>
-            <p>
-                This project is aimed at users who want to compress their JPEG files (file size &lt; 50Mb) to a specific size. After compression, we allow the users to either download the file from our server or get the files sent to their email address. This is a user-friendly web application in Python.
-    We use FTP (File Transfer Protocol) for upload and download of the file and SMTP (Simple Mail Transfer Protocol) for sending the file via email.
-            </p>
-            <p>
-                We use FTP (File Transfer Protocol) for upload and download of the file and SMTP (Simple Mail Transfer Protocol) for sending the file via email.
-            </p>
-            <a href="{{ url_for('upload_image') }}">Click Here to upload and Compress your image</a>
         </header>
-        <article>
-            <h2>User Guide</h2>
-            <ol>
-                <li>
-                    Select a <strong>.jpg</strong> or <strong>.jpeg</strong> image to upload.
-                </li>
-                <li>
-                    Click on the <strong>upload</strong> button.
-                </li>
-                <li>
-                    The file will not get uploaded in the following cases:
-                    <ul>
-                        <li>If the file extension is not .jpg or jpeg</li>
-                        <li>If the file size <strong>exceeds 50MB</strong></li>
-                    </ul>
-                </li>
-                <li>
-                    If file gets accepted, you will get redirected to a new page.
-                </li>
-                <li>
-                    On successful compression (to less than 80% of original size), the user has two options:
-                    <ul>
-                        <li>
-                            The download button downloads the compressed image for the user.
-                        </li>
-                        <li>
-                            Send as email button sends the compressed image as an email attachment to a valid and existing email address specified by the user.
-                        </li>
-                    </ul>
-                </li>
+        <div class="grid-container">
+            <div></div>
+            <div class="grid-item1">
+                    This project is aimed at users who want to compress their JPEG files (file size &lt; 50Mb) to a specific size. After compression, we allow the users to either download the file from our server or get the files sent to their email address. This is a user-friendly web application in Python.
+        We use FTP (File Transfer Protocol) for upload and download of the file and SMTP (Simple Mail Transfer Protocol) for sending the file via email.
+            </div>
+            <div></div>
 
-            </ol>
-        </article>
+            <div class="grid-item2">
+                    We use FTP (File Transfer Protocol) for upload and download of the file and SMTP (Simple Mail Transfer Protocol) for sending the file via email.
+            </div>
+            <div></div>
+        </div>
+        <div class="compress_file">
+            <a href="{{ url_for('upload_image') }}">Compress File</a>
+        </div>
+
+            <div class="user-guide">
+
+                <h2>How to use?</h2>   
+            </div>
+ 
+                <div class="instructions">
+                    <ol>
+                        <li>
+                            Select a <strong>.jpg</strong> or <strong>.jpeg</strong> image to upload.
+                        </li>
+                        <li>
+                            Click on the <strong>upload</strong> button.
+                        </li>
+                        <li>
+                            The file will not get uploaded in the following cases:
+                            <ul>
+                                <li>If the file extension is not .jpg or jpeg</li>
+                                <li>If the file size <strong>exceeds 50MB</strong></li>
+                            </ul>
+                        </li>
+                        <li>
+                            If file gets accepted, you will get redirected to a new page.
+                        </li>
+                        <li>
+                            On successful compression (to less than 80% of original size), the user has two options:
+                            <ul>
+                                <li>
+                                    The download button downloads the compressed image for the user.
+                                </li>
+                                <li>
+                                    Send as email button sends the compressed image as an email attachment to a valid and existing email address specified by the user.
+                                </li>
+                            </ul>
+                        </li>
+        
+                    </ol>
+                </div>
     </body>
 </html>
