@@ -10,7 +10,9 @@
 </head>
 <body>
     {% if filename %}
-    <h1>Compression successful!</h1>
+    <header>
+        <h1 class="greentext">Compression Successful</h1>
+    </header>
     <img src="{{ url_for('display_image', filename=filename) }}" width="150">
     <button type="button" onclick="window.location.href='{{ url_for('download_image', filename=filename) }}';">Download</button>
     <button type="button" onclick="window.location.href='{{ url_for('send_mail', filename=filename) }}';">Send to mail</button>
