@@ -22,7 +22,7 @@ We use FTP (File Transfer Protocol) for upload and download of the file and SMTP
 
 **Language Stack**: Python, HTML, CSS, JavaScript
 
-**Frameworks and Packages**: Flask, Numpy, OpenCV, Gunicorn
+**Frameworks and Packages**: Flask, Flask-Mail, Numpy, OpenCV, Gunicorn
 
 **Development Tools**: Atom, VS Code, Cloud Hosting with Heroku
 
