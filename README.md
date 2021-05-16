@@ -20,8 +20,12 @@ We use FTP (File Transfer Protocol) for upload and download of the file and SMTP
 
 ## Software
 
-**Language Stack**: Python, HTML, CSS
+**Language Stack**: Python, HTML, CSS, JavaScript
 
-**Frameworks**: Flask(backend), Django
+**Frameworks and Packages**: Flask, Numpy, OpenCV, Gunicorn
 
 **Development Tools**: Atom, VS Code, Cloud Hosting with Heroku
+
+## Link to our web app:
+
+https://online-jpeg-compressor.herokuapp.com/
