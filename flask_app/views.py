@@ -22,7 +22,6 @@ def get_req_var(var):
 
 
 image_path = get_req_var("IMAGE_UPLOADS")
-print("image path is " + image_path)
 app.config["IMAGE_UPLOADS"] = image_path
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG"]
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
@@ -65,27 +64,23 @@ def allowed_image(filename):
 
 @app.route('/success')
 def success(filename):
-    print(f'success! {filename}')
     return render_template('success.html', filename=filename)
 
 
 @app.route('/display/<filename>')
 def display_image(filename):
-    print(filename)
     filename = 'uploaded_images/' + filename
     return redirect(url_for('static', filename=filename), code=301)
 
 
 @app.route("/download/<filename>")
 def download_image(filename):
-    print(filename)
     filename = 'static/uploaded_images/' + filename
     return send_file(filename, as_attachment=True)
 
 
 @app.route("/send-mail/<filename>")
 def send_mail(filename):
-    print(filename)
     filename = 'static/uploaded_images/' + filename
     mail = Mail(app)
     mail.init_app(app)
@@ -95,30 +90,28 @@ def send_mail(filename):
         recipients=["adithyasuresh201@gmail.com"],
         )
     with app.open_resource(filename) as fp:
-        msg.attach("image.png", "image/jpg", fp.read())
-    print("sending mail...")
+        msg.attach("image.jpg", "image/jpg", fp.read())
     mail.send(msg)
-    print("mail has been sent")
     return render_template("mail_sent.html")
-    # return send_file(filename, as_attachment=True)
 
 
 @app.route("/upload-image", methods=["GET", "POST"])
 def upload_image():
+    # cwd = os.path.join(os.getcwd(), image_path)
+    # print(cwd)
     for f in os.listdir(image_path):
-        print(f"deleting {f}")
         os.remove(os.path.join(image_path, f))
+        print(f"file {f}")
+        print(image_path)
     if request.method == "POST":
         if request.files:
             if "filesize" in request.cookies:
                 if not allowed_image_filesize(request.cookies["filesize"]):
-                    print("Filesize exceeded maximum limit")
                     return redirect(request.url)
 
                 image = request.files["image"]
 
                 if image.filename == "":
-                    print("No filename")
                     return redirect(request.url)
 
                 if allowed_image(image.filename):
@@ -129,12 +122,8 @@ def upload_image():
                     quality_param = [int(cv.IMWRITE_JPEG_QUALITY), quality]
                     img_path = app.config["IMAGE_UPLOADS"] + "/" + filename
                     cv.imwrite(img_path, img, quality_param)
-                    print("Image saved")
-                    print(f"upload_image: {filename}")
-                    print(f"image var type: {type(image)}")
                     return render_template('success.html', filename=filename)
 
                 else:
-                    print("That file extension is not allowed")
                     return redirect(request.url)
     return render_template("upload_image.html")

@@ -1,4 +1,2 @@
-onlinejpegcompressor/
-flask_app/file_path.txt
+__pycache__/
 flask_app/__pycache__/
-flask_app/static/uploaded_images/
